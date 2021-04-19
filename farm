@@ -39,7 +39,7 @@ local ExecuteScript = function()
     PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
     PlayTween:Play()
     PlayTween.Completed:wait()
-    wait(0.5)
+    wait(1)
 elseif chest == 2 then
     local chestpos2 = game.Workspace.Chest2.Position -- Chest 2
     local speed = 4 -- Lower number is faster
@@ -51,7 +51,7 @@ elseif chest == 2 then
     PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
     PlayTween:Play()
     PlayTween.Completed:wait()
-    wait(0.5)
+    wait(1)
 elseif chest == 3 then
     local chestpos3 = game.Workspace.Chest3.Position -- Chest 3
     local speed = 4 -- Lower number is faster
@@ -63,7 +63,7 @@ elseif chest == 3 then
     PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
     PlayTween:Play()
     PlayTween.Completed:wait()
-    wait(0.5)
+    wait(1)
 end
 end
 end
