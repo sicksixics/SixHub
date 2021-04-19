@@ -1,0 +1,48 @@
+for i, v in pairs(workspace:GetChildren()) do
+    if v:IsA("Tool")  then
+        if v.Fruit then
+                local BillboardGui = Instance.new("BillboardGui")
+		local TextLabel = Instance.new("TextLabel")
+		BillboardGui.Parent = v.Fruit
+		BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+		BillboardGui.Active = true
+		BillboardGui.AlwaysOnTop = true
+		BillboardGui.LightInfluence = 1
+		BillboardGui.Size = UDim2.new(0, 100, 0, 25)
+		TextLabel.Parent = BillboardGui
+		TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+		TextLabel.BackgroundTransparency = 1
+		TextLabel.BorderSizePixel = 0
+		TextLabel.Size = UDim2.new(0, 100, 0, 25)
+		TextLabel.Font = Enum.Font.SourceSans
+		TextLabel.Text = v.Name
+		TextLabel.TextColor3 = v.Fruit.Color
+		TextLabel.TextScaled = true
+		TextLabel.TextSize = 14
+		TextLabel.TextWrapped = true
+        end
+    end
+    if v:IsA("Model") and v.Name == "Fruit " then
+      if v.Fruit then
+                local BillboardGui = Instance.new("BillboardGui")
+		local TextLabel = Instance.new("TextLabel")
+		BillboardGui.Parent = v
+		BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+		BillboardGui.Active = true
+		BillboardGui.AlwaysOnTop = true
+		BillboardGui.LightInfluence = 1
+		BillboardGui.Size = UDim2.new(0, 100, 0, 25)
+		TextLabel.Parent = BillboardGui
+		TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+		TextLabel.BackgroundTransparency = 1
+		TextLabel.BorderSizePixel = 0
+		TextLabel.Size = UDim2.new(0, 100, 0, 25)
+		TextLabel.Font = Enum.Font.SourceSans
+		TextLabel.Text = "Fruit"
+		TextLabel.TextColor3 = v.Fruit.Color
+		TextLabel.TextScaled = true
+		TextLabel.TextSize = 14
+		TextLabel.TextWrapped = true
+        end
+    end
+end
