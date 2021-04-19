@@ -1,0 +1,192 @@
+local SixHub = Instance.new("ScreenGui")
+local Top = Instance.new("Frame")
+local SixHub_2 = Instance.new("TextLabel")
+local Container = Instance.new("ScrollingFrame")
+local MainCat = Instance.new("Frame")
+local FruitEsp = Instance.new("TextButton")
+local ChestFarm = Instance.new("TextButton")
+local Tpua = Instance.new("TextButton")
+local UIGridLayout = Instance.new("UIGridLayout")
+local Categories = Instance.new("Frame")
+local Main = Instance.new("TextButton")
+local Quests = Instance.new("TextButton")
+local Exit = Instance.new("ImageButton")
+
+--Properties:
+
+SixHub.Name = "SixHub"
+SixHub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+SixHub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Top.Name = "Top"
+Top.Parent = SixHub
+Top.Active = true
+Top.BackgroundColor3 = Color3.fromRGB(66, 94, 139)
+Top.Position = UDim2.new(0.34289661, 0, 0.342751861, 0)
+Top.Size = UDim2.new(0, 535, 0, 41)
+Top.Active = true
+Top.Draggable = true
+
+SixHub_2.Name = "SixHub"
+SixHub_2.Parent = Top
+SixHub_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SixHub_2.BackgroundTransparency = 1.000
+SixHub_2.Size = UDim2.new(0, 533, 0, 40)
+SixHub_2.Font = Enum.Font.PermanentMarker
+SixHub_2.Text = "SixHub"
+SixHub_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+SixHub_2.TextSize = 25.000
+
+Container.Name = "Container"
+Container.Parent = Top
+Container.Active = true
+Container.BackgroundColor3 = Color3.fromRGB(123, 172, 235)
+Container.Position = UDim2.new(0, 0, 1, 0)
+Container.Size = UDim2.new(0, 535, 0, 255)
+Container.ScrollBarThickness = 8
+
+MainCat.Name = "Main Cat"
+MainCat.Parent = Container
+MainCat.BackgroundColor3 = Color3.fromRGB(123, 172, 235)
+MainCat.Position = UDim2.new(0.138025016, 0, 0.00345389289, 0)
+MainCat.Size = UDim2.new(0, 460, 0, 256)
+
+FruitEsp.Name = "FruitEsp"
+FruitEsp.Parent = MainCat
+FruitEsp.BackgroundColor3 = Color3.fromRGB(216, 240, 255)
+FruitEsp.Position = UDim2.new(0.313651979, 0, 0.0549230129, 0)
+FruitEsp.Size = UDim2.new(0, 100, 0, 50)
+FruitEsp.Font = Enum.Font.SourceSans
+FruitEsp.Text = "Fruit ESP"
+FruitEsp.TextColor3 = Color3.fromRGB(0, 0, 0)
+FruitEsp.TextSize = 14.000
+FruitEsp.MouseButton1Down:Connect(function()
+    for i, v in pairs(workspace:GetChildren()) do
+        if v:IsA("Tool")  then
+            if v.Fruit then
+                    local BillboardGui = Instance.new("BillboardGui")
+            local TextLabel = Instance.new("TextLabel")
+            BillboardGui.Parent = v.Fruit
+            BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+            BillboardGui.Active = true
+            BillboardGui.AlwaysOnTop = true
+            BillboardGui.LightInfluence = 1
+            BillboardGui.Size = UDim2.new(0, 100, 0, 25)
+            TextLabel.Parent = BillboardGui
+            TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+            TextLabel.BackgroundTransparency = 1
+            TextLabel.BorderSizePixel = 0
+            TextLabel.Size = UDim2.new(0, 100, 0, 25)
+            TextLabel.Font = Enum.Font.SourceSans
+            TextLabel.Text = v.Name
+            TextLabel.TextColor3 = v.Fruit.Color
+            TextLabel.TextScaled = true
+            TextLabel.TextSize = 14
+            TextLabel.TextWrapped = true
+            end
+        end
+        if v:IsA("Model") and v.Name == "Fruit " then
+        if v.Fruit then
+                    local BillboardGui = Instance.new("BillboardGui")
+            local TextLabel = Instance.new("TextLabel")
+            BillboardGui.Parent = v
+            BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+            BillboardGui.Active = true
+            BillboardGui.AlwaysOnTop = true
+            BillboardGui.LightInfluence = 1
+            BillboardGui.Size = UDim2.new(0, 100, 0, 25)
+            TextLabel.Parent = BillboardGui
+            TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+            TextLabel.BackgroundTransparency = 1
+            TextLabel.BorderSizePixel = 0
+            TextLabel.Size = UDim2.new(0, 100, 0, 25)
+            TextLabel.Font = Enum.Font.SourceSans
+            TextLabel.Text = "Fruit"
+            TextLabel.TextColor3 = v.Fruit.Color
+            TextLabel.TextScaled = true
+            TextLabel.TextSize = 14
+            TextLabel.TextWrapped = true
+            end
+        end
+    end
+end)
+
+ChestFarm.Name = "ChestFarm"
+ChestFarm.Parent = MainCat
+ChestFarm.BackgroundColor3 = Color3.fromRGB(216, 240, 255)
+ChestFarm.Position = UDim2.new(0.0237996578, 0, 0.0549230129, 0)
+ChestFarm.Size = UDim2.new(0, 100, 0, 50)
+ChestFarm.Font = Enum.Font.SourceSans
+ChestFarm.Text = "Chest Farm"
+ChestFarm.TextColor3 = Color3.fromRGB(0, 0, 0)
+ChestFarm.TextSize = 14.000
+ChestFarm.MouseButton1Down:Connect(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/sicksixics/SixHub/main/farm'))()
+end)
+
+Tpua.Name = "Tpua"
+Tpua.Parent = MainCat
+Tpua.BackgroundColor3 = Color3.fromRGB(216, 240, 255)
+Tpua.Position = UDim2.new(0.707158327, 0, -0.00469483575, 0)
+Tpua.Size = UDim2.new(0, 151, 0, 30)
+Tpua.Font = Enum.Font.SourceSans
+Tpua.Text = "Tpua"
+Tpua.TextColor3 = Color3.fromRGB(0, 0, 0)
+Tpua.TextSize = 14.000
+
+UIGridLayout.Parent = MainCat
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 150, 0, 30)
+
+Categories.Name = "Categories"
+Categories.Parent = Container
+Categories.BackgroundColor3 = Color3.fromRGB(81, 126, 194)
+Categories.Position = UDim2.new(-0.000351379975, 0, 0, 0)
+Categories.Size = UDim2.new(0, 75, 0, 260)
+
+Main.Name = "Main"
+Main.Parent = Categories
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BackgroundTransparency = 1.000
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(1.1920929e-07, 0, 0.00340601802, 0)
+Main.Size = UDim2.new(0, 75, 0, 44)
+Main.Font = Enum.Font.SourceSans
+Main.Text = "Main"
+Main.TextColor3 = Color3.fromRGB(0, 0, 0)
+Main.TextSize = 14.000
+
+Quests.Name = "Quests"
+Quests.Parent = Categories
+Quests.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Quests.BackgroundTransparency = 1.000
+Quests.BorderSizePixel = 0
+Quests.Position = UDim2.new(0, 0, 0.203406036, 0)
+Quests.Size = UDim2.new(0, 75, 0, 44)
+Quests.Font = Enum.Font.SourceSans
+Quests.Text = "Quests"
+Quests.TextColor3 = Color3.fromRGB(0, 0, 0)
+Quests.TextSize = 14.000
+
+Exit.Name = "Exit"
+Exit.Parent = Top
+Exit.BackgroundColor3 = Color3.fromRGB(66, 94, 139)
+Exit.BackgroundTransparency = 0
+Exit.BorderSizePixel = 0
+Exit.Position = UDim2.new(0.914386153, 0, 0, 0)
+Exit.Size = UDim2.new(0, 45, 0, 42)
+Exit.Image = "rbxassetid://4988112250"
+Exit.ImageColor3 = Color3.fromRGB(250, 234, 205)
+Exit.ScaleType = Enum.ScaleType.Fit
+Exit.MouseButton1Down:Connect(function()
+    SixHub.Enabled = false
+end)
+
+getgenv().KeyBind="m"
+local UIS=game:GetService'UserInputService'
+
+UIS.InputBegan:Connect(function(Key)
+     if Key.KeyCode==Enum.KeyCode[getgenv().KeyBind:upper()] and not UIS:GetFocusedTextBox() then
+        SixHub.Enabled = true
+     end
+end)
