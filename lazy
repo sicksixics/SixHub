@@ -1,83 +1,48 @@
-if not game:IsLoaded() then
-	game.Loaded:Wait()
-end
+local Tier1Chest = workspace:FindFirstChild("Chest1")
+local Tier2Chest = workspace:FindFirstChild("Chest2")
+local Tier3Chest = workspace:FindFirstChild("Chest3")
 
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Chest Teleports";
-	Text = "Loaded";
-})
-wait()
+if Tier3Chest then
+	local chestpos3 = game.Workspace.Chest3.Position
+	local speed = 4 -- Lower number is faster
 
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "Made By:";
-	Text = "sicksixics";
-})
-wait(1)
+	TweenService = game:GetService("TweenService")
+	tweenInfo = TweenInfo.new(speed)
+	TweenGoal = {}
+	TweenGoal.CFrame = CFrame.new(chestpos3)
+	PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
+	PlayTween:Play()
+	PlayTween.Completed:wait()
+	wait(1)
+elseif Tier3Chest == nil then
+	local chestpos2 = game.Workspace.Chest2.Position
+	local speed = 4 -- Lower number is faster
 
-game:GetService("StarterGui"):SetCore("SendNotification", {
-	Title = "KeyBind:";
-	Text = "J";
-})
+	TweenService = game:GetService("TweenService")
+	tweenInfo = TweenInfo.new(speed)
+	TweenGoal = {}
+	TweenGoal.CFrame = CFrame.new(chestpos2)
+	PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
+	PlayTween:Play()
+	PlayTween.Completed:wait()
+	wait(1)
+elseif Tier2Chest == nil then
+	local Tier1Chest = workspace:FindFirstChild("Chest1")
 
-local UIS = game:GetService("UserInputService")
-local loop = 2
+	if Tier1Chest then
+		local chestpos1 = game.Workspace.Chest1.Position
+		local speed = 4 -- Lower number is faster
 
-UIS.InputBegan:Connect(function(Input, IsTyping)
-	if Input.UserInputType == Enum.UserInputType.Keyboard then
-		if Input.KeyCode == Enum.KeyCode.J and loop == 2 then
-			loop = 1
-			repeat
-				local Tier1Chest = workspace:FindFirstChild("Chest1")
-				local Tier2Chest = workspace:FindFirstChild("Chest2")
-				local Tier3Chest = workspace:FindFirstChild("Chest3")
-
-				if Tier3Chest then
-					local chestpos3 = game.Workspace.Chest3.Position
-					local speed = 4 -- Lower number is faster
-
-					TweenService = game:GetService("TweenService")
-					tweenInfo = TweenInfo.new(speed)
-					TweenGoal = {}
-					TweenGoal.CFrame = CFrame.new(chestpos3)
-					PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
-					PlayTween:Play()
-					PlayTween.Completed:wait()
-					wait(1)
-				elseif Tier3Chest == nil then
-					local chestpos2 = game.Workspace.Chest2.Position
-					local speed = 4 -- Lower number is faster
-
-					TweenService = game:GetService("TweenService")
-					tweenInfo = TweenInfo.new(speed)
-					TweenGoal = {}
-					TweenGoal.CFrame = CFrame.new(chestpos2)
-					PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
-					PlayTween:Play()
-					PlayTween.Completed:wait()
-					wait(1)
-				elseif Tier2Chest == nil then
-					local Tier1Chest = workspace:FindFirstChild("Chest1")
-
-					if Tier1Chest then
-						local chestpos1 = game.Workspace.Chest1.Position
-						local speed = 4 -- Lower number is faster
-
-						TweenService = game:GetService("TweenService")
-						tweenInfo = TweenInfo.new(speed)
-						TweenGoal = {}
-						TweenGoal.CFrame = CFrame.new(chestpos1)
-						PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
-						PlayTween:Play()
-						PlayTween.Completed:wait()
-						wait(1)
-					elseif Tier1Chest == nil then
-						loop = 2
-						workspace:WaitForChild("Chest3", "Chest2", "Chest1")
-						loop = 1
-					end
-			until loop == 2
-		elseif Input.KeyCode == Enum.KeyCode.J and loop == 1 then
-			loop = 2
-		end
+		TweenService = game:GetService("TweenService")
+		tweenInfo = TweenInfo.new(speed)
+		TweenGoal = {}
+		TweenGoal.CFrame = CFrame.new(chestpos1)
+		PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
+		PlayTween:Play()
+		PlayTween.Completed:wait()
+		wait(1)
+	elseif Tier1Chest == nil then
+		loop = 2
+		workspace:WaitForChild("Chest3", "Chest2", "Chest1")
+		loop = 1
 	end
-end)
