@@ -11,7 +11,7 @@ if chestpos2 then
     PlayTween:Play()
     PlayTween.Completed:wait()
     wait(1)
-elseif chestpos3 then
+else chestpos3 then
     TweenService = game:GetService("TweenService")
     tweenInfo = TweenInfo.new(speed)
     TweenGoal = {}
