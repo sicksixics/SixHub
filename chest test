@@ -1,6 +1,6 @@
-local chestpos3 = Workspace:WaitForChild("Chest3")-- Chest 3
-local chestpos2 = Workspace:WaitForChild("Chest2")-- Chest 2
-local chestpos1 = Workspace:WaitForChild("Chest1")-- Chest 1
+local chestpos3 = Workspace:WaitForChild("Chest3",600)-- Chest 3
+local chestpos2 = Workspace:WaitForChild("Chest2",600)-- Chest 2
+local chestpos1 = Workspace:WaitForChild("Chest1",600)-- Chest 1
 local speed = 3 -- Lower number is faster
 
 if chestpos1 then
