@@ -1,18 +1,8 @@
 local chestpos3 = Workspace:WaitForChild("Chest3",600)-- Chest 3
 local chestpos2 = Workspace:WaitForChild("Chest2",600)-- Chest 2
-local chestpos1 = Workspace:WaitForChild("Chest1",600)-- Chest 1
 local speed = 2 -- Lower number is faster
 
-if chestpos1 then
-    TweenService = game:GetService("TweenService")
-    tweenInfo = TweenInfo.new(speed)
-    TweenGoal = {}
-    TweenGoal.CFrame = CFrame.new(chestpos1.Position)
-    PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
-    PlayTween:Play()
-    PlayTween.Completed:wait()
-    wait(1)
-elseif chestpos2 then
+if chestpos2 then
     TweenService = game:GetService("TweenService")
     tweenInfo = TweenInfo.new(speed)
     TweenGoal = {}
